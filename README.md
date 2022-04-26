@@ -32,7 +32,8 @@ gulp는 흔히 Task Runner로 알려져있다.
 
 # pug 파일 html 변환설정
 
-1. gulp pug 플러그인 설치
+1. gulp pug 플러그인 설치  
+
 `npm install -D gulp-pug`
 2. 호출
 ```javascript
