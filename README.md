@@ -30,6 +30,28 @@ gulp는 흔히 Task Runner로 알려져있다.
 - npm install @babel/core
 - npm install @babel/preset-env
 
-# gulpfile + Babel 컴파일 설정
+# pug 파일 html 변환설정
 
-pug 파일 html 변환설정
+1. gulp pug 플러그인 설치
+`npm install -D gulp-pug`
+2. 호출
+```javascript
+import gulp, { series } from 'gulp';
+import gulpPug from 'gulp-pug';
+
+const routes = { // 경로설정
+    pug: {
+        src: 'src/*.pug',
+        dest: 'build'
+    }
+}
+
+const pug = () => {
+    gulp
+    .src(routes.pug.src) // 해당 경로에 있는 .pug파일 탐색.
+    .pipe(gulpPug())     // pug 파일 html 변환
+    .pipe(gulp.dest(routes.pug.dest)); // 해당경로에 폴더생성 ( build폴더 )
+}
+
+export const dev = gulp.series([pug]); // Pug Task 실행
+```
