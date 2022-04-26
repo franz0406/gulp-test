@@ -34,7 +34,8 @@ gulp는 흔히 Task Runner로 알려져있다.
 
 1. gulp pug 플러그인 설치  
 
-`npm install -D gulp-pug`
+`npm install -D gulp-pug`  
+
 2. 호출
 ```javascript
 import gulp, { series } from 'gulp';
